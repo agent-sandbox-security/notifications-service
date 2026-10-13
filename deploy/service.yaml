@@ -1,0 +1,13 @@
+# Deployed by the platform pipeline from main.
+service: notifications
+owner: team-growth
+role: agentscope-task-notifications
+extra_roles: [payments-shared-role]
+environments:
+  staging:
+    log_group: notif-staging-logs
+  prod:
+    log_group: notif-prod-logs
+env:
+  SENDGRID_API_KEY: { secret: notif-sendgrid-key }
+  EVENTS_QUEUE: { queue: payments-events }
