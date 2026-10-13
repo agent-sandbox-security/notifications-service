@@ -1,7 +1,7 @@
 # Deployed by the platform pipeline from main.
 service: notifications
 owner: team-growth
-role: agentscope-task-notifications
+role: notif-task-role
 extra_roles: [payments-shared-role]
 environments:
   staging:
@@ -11,3 +11,4 @@ environments:
 env:
   SENDGRID_API_KEY: { secret: notif-sendgrid-key }
   EVENTS_QUEUE: { queue: payments-events }
+  SENDER_DOMAIN: mailer.acme-tx9.net
